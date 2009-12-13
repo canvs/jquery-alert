@@ -1,0 +1,32 @@
+<html>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link type="text/css" rel="stylesheet" href="css/jquery.alert.css"/>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.alert.js"></script>
+		<script type="text/javascript" src="js/jquery.bgiframe.js"></script>
+		<script language="javascript">
+			jQuery(document).ready(function($){
+				$('#btn').click(function(){
+					var $psgName = $('.psgName');
+					if($.trim($psgName.val()) == ''){
+						$psgName.alert('请输入乘机人姓名');
+						return false;
+					}
+					var $certiNo = $('.certiNo');
+					if($.trim($certiNo.val()) == ''){
+						$certiNo.alert('请输入证件号码', {alertClass: 'corner',position: 'top'});
+						return false;
+					}
+					return false;
+				});
+			});				
+		</script>
+	</head>
+	<body>
+		<h2>============jQuery alert plugin Demo=============</h2>
+		<input class="psgName" type="input" /><br/>
+		<input class="certiNo" type="input" /><br/>
+		<input type="button" id="btn" value="test"/>
+	</body>
+</html>
